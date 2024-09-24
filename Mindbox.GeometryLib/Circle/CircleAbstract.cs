@@ -1,5 +1,9 @@
 ﻿namespace Mindbox.GeometryLib.Circle
 {
+    /// <summary>
+    /// Abstract circle.
+    /// Insted use <seealso cref="CircleImmutable"/> or <seealso cref="CircleMutable"/>
+    /// </summary>
     public abstract class CircleAbstract : IShape
     {
         public abstract double Radius { get; protected set; }
