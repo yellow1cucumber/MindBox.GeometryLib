@@ -2,6 +2,6 @@
 {
     public interface IMutable
     {
-        public event Action onChanges;
+        public event Action? onChanges;
     }
 }
