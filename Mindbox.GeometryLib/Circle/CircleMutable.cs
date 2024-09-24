@@ -1,27 +1,10 @@
 ﻿
 namespace Mindbox.GeometryLib.Circle
 {
-    public sealed class CircleMutable : CircleAbstract,
-                                        IMutable
+    public sealed class CircleMutable : CircleAbstract
     {
-        public override double Radius {
-            get { return Radius; }
-            protected set
-            {
-                Radius = value;
-                this.onChanges?.Invoke();
-            }
-        }
-        public double Area { 
-            get { return Area; }
-            private set
-            {
-                Area = value;
-                this.onChanges?.Invoke();
-            }
-        }
-
-        public event Action? onChanges;
+        public override double Radius { get; protected set; }
+        public double Area { get; private set; }
 
         public void SetRadius(double radius)
         {
