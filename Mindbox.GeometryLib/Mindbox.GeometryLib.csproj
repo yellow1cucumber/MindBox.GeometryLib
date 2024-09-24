@@ -10,8 +10,4 @@
     <None Remove="SQL_task.sql" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Compile Include="SQL_task.sql" />
-  </ItemGroup>
-
 </Project>
