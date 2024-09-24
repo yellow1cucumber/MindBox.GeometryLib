@@ -1,11 +1,22 @@
 ﻿namespace Mindbox.GeometryLib.Triangle
 {
+    /// <summary>
+    /// Abstract triangle.
+    /// <para>See also:</para>
+    /// <para><seealso cref="TriangleImmutable"/></para>
+    /// <para><seealso cref="TriangleMutable"/></para>
+    /// </summary>
     public abstract class TriangleAbstract : IShape
     {
         public abstract double SideA { get; protected set; }
         public abstract double SideB { get; protected set; }
         public abstract double SideC { get; protected set; }
 
+        /// <summary>
+        /// Sets all triangle sides as sideLength
+        /// </summary>
+        /// <param name="sideLength"> - length of triangle side</param>
+        /// <exception cref="ArgumentOutOfRangeException"> - throws, if sideLength arg 0 </exception>
         protected TriangleAbstract(double sideLength)
         {
             if (!isSidesValid(sideLength))
@@ -16,6 +27,13 @@
             SideB = sideLength;
             SideC = sideLength;
         }
+        /// <summary>
+        /// Sets triangle sides manualy
+        /// </summary>
+        /// <param name="sideA"></param>
+        /// <param name="sideB"></param>
+        /// <param name="sideC"></param>
+        /// <exception cref="ArgumentOutOfRangeException"> - throws, if sideLength arg 0 </exception>
         protected TriangleAbstract(double sideA, double sideB, double sideC)
         {
             if (!isSidesValid(sideA, sideB, sideC))
@@ -27,6 +45,13 @@
             SideC = sideC;
         }
 
+        /// <summary>
+        /// Checks if triangle is rigth
+        /// </summary>
+        /// <returns>
+        /// <para>true - if triangle is right</para>
+        /// <para>false - if triangle is not right</para>
+        /// </returns>
         public bool IsRightTriangle()
         {
             double[] sides = new[] { SideA, SideB, SideC };
