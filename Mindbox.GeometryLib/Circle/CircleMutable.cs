@@ -8,8 +8,6 @@ namespace Mindbox.GeometryLib.Circle
         public override double Radius { get; protected set; }
         public double Area { get; private set; }
 
-        public event Action? onChanges;
-
         public void SetRadius(double radius)
         {
             Radius = radius;
@@ -17,9 +15,12 @@ namespace Mindbox.GeometryLib.Circle
             this.onChanges?.Invoke();
         }
 
-
         public CircleMutable(double radius)
             : base(radius)
             => Area = GetArea();
+
+        #region CONTRACTS_IMPLEMENTATION
+        public event Action? onChanges;
+        #endregion
     }
 }
