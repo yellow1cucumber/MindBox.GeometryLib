@@ -1,6 +1,7 @@
 ﻿namespace Mindbox.GeometryLib.Triangle
 {
-    public sealed class TriangleMutable : TriangleAbstract
+    public sealed class TriangleMutable : TriangleAbstract, 
+                                          IMutable
     {
         public override double SideA { get; protected set; }
         public override double SideB { get; protected set; }
@@ -14,6 +15,7 @@
         public TriangleMutable(double sideA, double sideB, double sideC) 
             : base(sideA, sideB, sideC) {}
 
+
         public void SetSides(double sideA, double sideB, double sideC)
         {
             if (!isSidesValid(sideA, sideB, sideC))
@@ -24,6 +26,11 @@
             this.SideB = sideB;
             this.SideC = sideC;
             this.Area = base.GetArea();
+            this.onChanges?.Invoke();
         }
+
+        #region CONTRACTS_IMPLEMENTATION
+        public event Action? onChanges;
+        #endregion
     }
 }
