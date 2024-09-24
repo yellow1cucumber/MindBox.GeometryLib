@@ -1,6 +1,4 @@
-﻿
-
-namespace Mindbox.GeometryLib.Circle
+﻿namespace Mindbox.GeometryLib.Circle
 {
     public sealed class CircleMutable : CircleAbstract,
                                         IMutable
