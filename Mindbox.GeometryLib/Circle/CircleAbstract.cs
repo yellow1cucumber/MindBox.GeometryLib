@@ -17,7 +17,7 @@
             => radius > 0;
 
 
-        #region CONTRACT_IMPLEMENTATION
+        #region CONTRACTS_IMPLEMENTATION
         public double GetArea()
         {
             return Math.PI * Math.Pow(Radius, 2);
