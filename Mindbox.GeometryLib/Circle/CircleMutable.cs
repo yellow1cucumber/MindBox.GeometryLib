@@ -1,5 +1,12 @@
 ﻿namespace Mindbox.GeometryLib.Circle
 {
+    /// <summary>
+    /// Modifiable version of Circle.
+    /// <para>See also:</para>
+    /// <para><seealso cref="CircleAbstract"/> - base class</para>
+    /// <para><seealso cref="CircleImmutable"/> - immutable version</para>
+    /// <para><seealso cref="IMutable"/> - implementing contract</para>
+    /// </summary>
     public sealed class CircleMutable : CircleAbstract,
                                         IMutable
     {
