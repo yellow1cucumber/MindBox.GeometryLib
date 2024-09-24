@@ -1,4 +1,4 @@
-﻿namespace Mindbox.GeometryLib
+﻿namespace Mindbox.GeometryLib.Triangle
 {
     public abstract class TriangleAbstract : IShape
     {
@@ -12,9 +12,9 @@
             {
                 throw new ArgumentOutOfRangeException(nameof(sideLength), "Side has to be > 0");
             }
-            this.SideA = sideLength;
-            this.SideB = sideLength;
-            this.SideC = sideLength;
+            SideA = sideLength;
+            SideB = sideLength;
+            SideC = sideLength;
         }
         protected TriangleAbstract(double sideA, double sideB, double sideC)
         {
@@ -22,9 +22,9 @@
             {
                 throw new ArgumentOutOfRangeException("Side has to be > 0");
             }
-            this.SideA = sideA;
-            this.SideB = sideB;
-            this.SideC = sideC;
+            SideA = sideA;
+            SideB = sideB;
+            SideC = sideC;
         }
 
         public bool IsRightTriangle()
@@ -39,9 +39,9 @@
 
         protected bool isSidesValid(params double[] sides)
         {
-            foreach(var side in sides)
+            foreach (var side in sides)
             {
-                if(side < 0) return false;
+                if (side < 0) return false;
             }
             return true;
         }
