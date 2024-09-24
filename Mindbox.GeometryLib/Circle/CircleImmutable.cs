@@ -1,4 +1,4 @@
-﻿namespace Mindbox.GeometryLib
+﻿namespace Mindbox.GeometryLib.Circle
 {
     public class CircleImmutable : CircleAbstract
     {

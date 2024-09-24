@@ -1,4 +1,4 @@
-﻿namespace Mindbox.GeometryLib
+﻿namespace Mindbox.GeometryLib.Circle
 {
     public abstract class CircleAbstract : IShape
     {
@@ -10,7 +10,7 @@
             {
                 throw new ArgumentOutOfRangeException(nameof(radius), "Radius has to be > 0");
             }
-            this.Radius = radius;
+            Radius = radius;
         }
 
         private bool isRadiusValid(double radius)
@@ -20,7 +20,7 @@
         #region CONTRACT_IMPLEMENTATION
         public double GetArea()
         {
-            return Math.PI * Math.Pow(this.Radius, 2);
+            return Math.PI * Math.Pow(Radius, 2);
         }
         #endregion
     }

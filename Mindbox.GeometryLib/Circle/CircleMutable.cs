@@ -1,4 +1,4 @@
-﻿namespace Mindbox.GeometryLib
+﻿namespace Mindbox.GeometryLib.Circle
 {
     public class CircleMutable : CircleAbstract
     {
@@ -7,13 +7,13 @@
 
         public void SetRadius(double radius)
         {
-            this.Radius = radius;
-            this.Area = base.GetArea();
+            Radius = radius;
+            Area = GetArea();
         }
 
 
-        public CircleMutable(double radius) 
+        public CircleMutable(double radius)
             : base(radius)
-            => this.Area = base.GetArea();
+            => Area = GetArea();
     }
 }
