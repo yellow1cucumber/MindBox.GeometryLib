@@ -27,10 +27,10 @@
         /// <returns>
         /// list of shapes
         /// </returns>
-        public static IEnumerable<T> CreateShapes<T>(IEnumerable<(T, object[] args)> shapesInfo) where T : IShape
+        public static IEnumerable<T> CreateShapes<T>(IEnumerable<object[]> shapesInfo) where T : IShape
         {
             var shapes = new List<T>();
-            foreach (var (type, args) in shapesInfo)
+            foreach (var args in shapesInfo)
             {
                 Type shapeType = typeof(T);
                 var shape = (T)Activator.CreateInstance(shapeType, args)!;
