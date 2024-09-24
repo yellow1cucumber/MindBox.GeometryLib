@@ -1,6 +1,6 @@
 ﻿namespace Mindbox.GeometryLib.Circle
 {
-    public class CircleImmutable : CircleAbstract
+    public sealed class CircleImmutable : CircleAbstract
     {
         public override double Radius { get; protected set; }
 

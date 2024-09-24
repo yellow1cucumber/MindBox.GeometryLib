@@ -1,6 +1,6 @@
 ﻿namespace Mindbox.GeometryLib.Circle
 {
-    public class CircleMutable : CircleAbstract
+    public sealed class CircleMutable : CircleAbstract
     {
         public override double Radius { get; protected set; }
         public double Area { get; private set; }
