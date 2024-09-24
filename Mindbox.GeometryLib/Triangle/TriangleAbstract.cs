@@ -2,9 +2,9 @@
 {
     public abstract class TriangleAbstract : IShape
     {
-        public double SideA { get; protected set; }
-        public double SideB { get; protected set; }
-        public double SideC { get; protected set; }
+        public abstract double SideA { get; protected set; }
+        public abstract double SideB { get; protected set; }
+        public abstract double SideC { get; protected set; }
 
         protected TriangleAbstract(double sideLength)
         {
