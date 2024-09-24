@@ -5,10 +5,7 @@ namespace Mindbox.GeometryLib.Circle
                                         IMutable
     {
         public override double Radius {
-            get
-            {
-                return Radius;
-            }
+            get { return Radius; }
             protected set
             {
                 Radius = value;
@@ -16,10 +13,7 @@ namespace Mindbox.GeometryLib.Circle
             }
         }
         public double Area { 
-            get
-            {
-                return Area;
-            }
+            get { return Area; }
             private set
             {
                 Area = value;
