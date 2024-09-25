@@ -90,11 +90,11 @@
                    SideB == other.SideB &&
                    SideC == other.SideC;
         }
+        #endregion
 
         public override int GetHashCode()
         {
             return HashCode.Combine(SideA, SideB, SideC);
         }
-        #endregion
     }
 }
