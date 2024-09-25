@@ -1,4 +1,5 @@
-﻿namespace Mindbox.GeometryLib.Triangle
+﻿
+namespace Mindbox.GeometryLib.Triangle
 {
     /// <summary>
     /// Modifiable version of circle.
@@ -8,7 +9,7 @@
     /// <para><seealso cref="IMutable"/> - implementing contract</para>
     /// </summary>
     public sealed class TriangleMutable : TriangleAbstract, 
-                                          IMutable
+                                          IMutable, IEquatable<TriangleMutable?>
     {
         public override double SideA { get; protected set; }
         public override double SideB { get; protected set; }
@@ -47,8 +48,41 @@
             this.onChanges?.Invoke();
         }
 
+        public override int GetHashCode()
+        {
+            return HashCode.Combine(base.GetHashCode(), SideA, SideB, SideC, SideA, SideB, SideC, Area);
+        }
+
         #region CONTRACTS_IMPLEMENTATION
         public event Action? onChanges;
+
+        public override bool Equals(object? obj)
+        {
+            return Equals(obj as TriangleMutable);
+        }
+
+        public bool Equals(TriangleMutable? other)
+        {
+            return other is not null &&
+                   base.Equals(other) &&
+                   SideA == other.SideA &&
+                   SideB == other.SideB &&
+                   SideC == other.SideC &&
+                   SideA == other.SideA &&
+                   SideB == other.SideB &&
+                   SideC == other.SideC &&
+                   Area == other.Area;
+        }
+
+        public static bool operator ==(TriangleMutable? left, TriangleMutable? right)
+        {
+            return EqualityComparer<TriangleMutable>.Default.Equals(left, right);
+        }
+
+        public static bool operator !=(TriangleMutable? left, TriangleMutable? right)
+        {
+            return !(left == right);
+        }
         #endregion
     }
 }
