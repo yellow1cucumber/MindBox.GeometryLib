@@ -6,7 +6,7 @@
     /// <para><seealso cref="TriangleImmutable"/></para>
     /// <para><seealso cref="TriangleMutable"/></para>
     /// </summary>
-    public abstract class TriangleAbstract : IShape
+    public abstract class TriangleAbstract : IShape, IEquatable<TriangleAbstract?>
     {
         public abstract double SideA { get; protected set; }
         public abstract double SideB { get; protected set; }
@@ -76,6 +76,24 @@
         {
             double area = (SideA + SideB + SideC) / 2;
             return Math.Sqrt(area * (area - SideA) * (area - SideB) * (area - SideC));
+        }
+
+        public override bool Equals(object? obj)
+        {
+            return Equals(obj as TriangleAbstract);
+        }
+
+        public bool Equals(TriangleAbstract? other)
+        {
+            return other is not null &&
+                   SideA == other.SideA &&
+                   SideB == other.SideB &&
+                   SideC == other.SideC;
+        }
+
+        public override int GetHashCode()
+        {
+            return HashCode.Combine(SideA, SideB, SideC);
         }
         #endregion
     }
