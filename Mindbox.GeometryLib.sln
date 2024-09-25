@@ -3,14 +3,16 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.11.35312.102
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mindbox.GeometryLib", "Mindbox.GeometryLib\Mindbox.GeometryLib.csproj", "{9EC915A1-A54D-40A5-A4F4-E32768EEDDC9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mindbox.GeometryLib", "Mindbox.GeometryLib\Mindbox.GeometryLib.csproj", "{9EC915A1-A54D-40A5-A4F4-E32768EEDDC9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mindbox.Tests", "Mindbox.Tests\Mindbox.Tests.csproj", "{A5D2410E-899E-4626-8D5A-628D3CCA0883}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mindbox.Tests", "Mindbox.Tests\Mindbox.Tests.csproj", "{A5D2410E-899E-4626-8D5A-628D3CCA0883}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Элементы решения", "Элементы решения", "{932BB9EC-A063-406F-8C5C-3C7577F0378B}"
 	ProjectSection(SolutionItems) = preProject
 		SQL_task.sql = SQL_task.sql
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mindbox.GeometryLib.Example", "Mindbox.GeometryLib.Example\Mindbox.GeometryLib.Example.csproj", "{01D2A78B-9F31-4675-B4DF-161E5D36EB64}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -26,6 +28,10 @@ Global
 		{A5D2410E-899E-4626-8D5A-628D3CCA0883}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A5D2410E-899E-4626-8D5A-628D3CCA0883}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A5D2410E-899E-4626-8D5A-628D3CCA0883}.Release|Any CPU.Build.0 = Release|Any CPU
+		{01D2A78B-9F31-4675-B4DF-161E5D36EB64}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{01D2A78B-9F31-4675-B4DF-161E5D36EB64}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{01D2A78B-9F31-4675-B4DF-161E5D36EB64}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{01D2A78B-9F31-4675-B4DF-161E5D36EB64}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
