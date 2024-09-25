@@ -1,4 +1,5 @@
-﻿namespace Mindbox.GeometryLib.Circle
+﻿
+namespace Mindbox.GeometryLib.Circle
 {
     /// <summary>
     /// Modifiable version of Circle.
@@ -8,7 +9,7 @@
     /// <para><seealso cref="IMutable"/> - implementing contract</para>
     /// </summary>
     public sealed class CircleMutable : CircleAbstract,
-                                        IMutable
+                                        IMutable, IEquatable<CircleMutable?>
     {
         public override double Radius { get; protected set; }
         public double Area { get; private set; }
@@ -26,6 +27,34 @@
 
         #region CONTRACTS_IMPLEMENTATION
         public event Action? onChanges;
+
+        public override bool Equals(object? obj)
+        {
+            return Equals(obj as CircleMutable);
+        }
+
+        public bool Equals(CircleMutable? other)
+        {
+            return other is not null &&
+                   Radius == other.Radius &&
+                   Radius == other.Radius &&
+                   Area == other.Area;
+        }
+
+        public static bool operator ==(CircleMutable? left, CircleMutable? right)
+        {
+            return EqualityComparer<CircleMutable>.Default.Equals(left, right);
+        }
+
+        public static bool operator !=(CircleMutable? left, CircleMutable? right)
+        {
+            return !(left == right);
+        }
         #endregion
+
+        public override int GetHashCode()
+        {
+            return HashCode.Combine(Radius, Radius, Area);
+        }
     }
 }
